@@ -4,6 +4,7 @@ import android.util.Log
 import android.util.Xml
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.xmlpull.v1.XmlPullParser
@@ -11,12 +12,14 @@ import java.io.BufferedInputStream
 import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
+import javax.inject.Inject
 
 
 /**
  * Created by tam.hs on 1/19/2024.
  */
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(): ViewModel() {
     fun readRss(urlRss: String) {
         viewModelScope.launch(Dispatchers.IO) {
             val url = URL(urlRss)

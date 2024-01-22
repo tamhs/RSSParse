@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Rsspaser</string>
+    <string name="app_name">Rss Parser</string>
+
+    <string name="error_some_thing_went_wrong_content">Api Error</string>
 </resources>
